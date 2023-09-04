@@ -4,7 +4,27 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 require("dotenv").config();
 
-async function register(req, res) {
+
+const getBirthDates = async (req, res) => {
+  try {
+    console.log("Getting today's birth dates");
+
+    const dates = await User.getTodaysDates();
+    if(!dates) return res.status(204).json({ success: false });
+
+    res.status(200).json({ success: true, birthDates: dates });
+  } catch (err) {
+    console.error("Error Getting User:\n", err);
+    res.status(500).send({ success: false, message: "Server Error" });
+  }
+};
+
+const wish = (req, res) => {
+  console.log(`Happy Birthday ${req.params.name}!`);
+  res.status(200).json({ hasBody: false, message: "Thank you :)" });
+}
+
+const register = async (req, res) => {
   const { username, password } = req.body; 
 
   try {
@@ -14,30 +34,31 @@ async function register(req, res) {
     if (userExists) return res.status(200).send({ success: false, message: "Username Already Exist!" });
 
     const hashed = await bcrypt.hash(password, 10);
-    console.log("HASH PASS: ", hashed); // REMOVE
     const user = await User.register({ ...req.body, password: hashed });
 
     signToken(user.username, res);
   } catch (err) {
-    console.error("Error Creating User:\n\t", err);
+    console.error("Error Creating User:\n", err);
     res.status(500).send({ success: false, message: "Server Error" });
   }
 }
 
-async function login(req, res) {
+const login = async (req, res) => {
   const { username, password } = req.body; 
 
   try {
     console.log(`Try to log in user ${username}`)
 
     const user = await User.findUser(username);
-    const authed = await bcrypt.compare(password, user?.password);
+    if(!user) return res.status(401).json({ success: true, message: "Wrong username/password" });
+
+    const authed = await bcrypt.compare(password, user.password);
     if (authed) {
       console.log("User logged in -> ", user.username);
       signToken(user.username, res);
     } else res.status(401).json({ success: true, message: "Wrong username/password" });
   } catch (err) {
-    console.error("Error Logging User:\n\t", err);
+    console.error("Error Logging User:\n", err);
     res.status(500).send({ success: false, message: "Server Error" });
   }
 }
@@ -54,6 +75,8 @@ function signToken(username, res) {
 }
 
 module.exports = {
+  getBirthDates,
   register,
-  login
+  login,
+  wish
 };
