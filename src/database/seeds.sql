@@ -1,0 +1,21 @@
+INSERT INTO users (username, first_name, last_name, birth_date, password)
+VALUES
+  ('user1', 'John', 'Doe', '1990-09-04', '$2b$10$WnVLBksTn7kwmz5bxtjbmeNtyYkriaeda6/p.amcmi5cvGcdL/fdG'),
+  ('user2', 'Alice', 'Smith', '1985-09-04', '$2b$10$WnVLBksTn7kwmz5bxtjbmeNtyYkriaeda6/p.amcmi5cvGcdL/fdG'),
+  ('user3', 'Bob', 'Johnson', '1992-09-05', '$2b$10$WnVLBksTn7kwmz5bxtjbmeNtyYkriaeda6/p.amcmi5cvGcdL/fdG'),
+  ('user4', 'Eva', 'Williams', '1993-09-05', '$2b$10$WnVLBksTn7kwmz5bxtjbmeNtyYkriaeda6/p.amcmi5cvGcdL/fdG'),
+  ('user5', 'Daniel', 'Brown', '1988-09-06', '$2b$10$WnVLBksTn7kwmz5bxtjbmeNtyYkriaeda6/p.amcmi5cvGcdL/fdG'),
+  ('user6', 'Sophia', 'Lee', '1991-09-06', '$2b$10$WnVLBksTn7kwmz5bxtjbmeNtyYkriaeda6/p.amcmi5cvGcdL/fdG'),
+  ('user7', 'Matthew', 'Taylor', '1987-09-07', '$2b$10$WnVLBksTn7kwmz5bxtjbmeNtyYkriaeda6/p.amcmi5cvGcdL/fdG'),
+  ('user8', 'Olivia', 'Anderson', '1995-09-07', '$2b$10$WnVLBksTn7kwmz5bxtjbmeNtyYkriaeda6/p.amcmi5cvGcdL/fdG'),
+  ('user9', 'David', 'Martinez', '1989-09-08', '$2b$10$WnVLBksTn7kwmz5bxtjbmeNtyYkriaeda6/p.amcmi5cvGcdL/fdG'),
+  ('user10', 'Isabella', 'Hernandez', '1998-09-08', '$2b$10$WnVLBksTn7kwmz5bxtjbmeNtyYkriaeda6/p.amcmi5cvGcdL/fdG'),
+  ('user11', 'William', 'Garcia', '1986-09-09', '$2b$10$WnVLBksTn7kwmz5bxtjbmeNtyYkriaeda6/p.amcmi5cvGcdL/fdG'),
+  ('user12', 'Sophia', 'Jones', '1990-09-09', '$2b$10$WnVLBksTn7kwmz5bxtjbmeNtyYkriaeda6/p.amcmi5cvGcdL/fdG'),
+  ('user13', 'James', 'Wilson', '1984-09-10', '$2b$10$WnVLBksTn7kwmz5bxtjbmeNtyYkriaeda6/p.amcmi5cvGcdL/fdG'),
+  ('user14', 'Olivia', 'Davis', '1992-09-10', '$2b$10$WnVLBksTn7kwmz5bxtjbmeNtyYkriaeda6/p.amcmi5cvGcdL/fdG'),
+  ('user15', 'John', 'Miller', '1983-09-11', '$2b$10$WnVLBksTn7kwmz5bxtjbmeNtyYkriaeda6/p.amcmi5cvGcdL/fdG'),
+  ('user16', 'Emma', 'Brown', '1996-09-11', '$2b$10$WnVLBksTn7kwmz5bxtjbmeNtyYkriaeda6/p.amcmi5cvGcdL/fdG'),
+  ('user17', 'Michael', 'Clark', '1982-09-12', '$2b$10$WnVLBksTn7kwmz5bxtjbmeNtyYkriaeda6/p.amcmi5cvGcdL/fdG'),
+  ('user18', 'Emily', 'Wright', '1994-09-12', '$2b$10$WnVLBksTn7kwmz5bxtjbmeNtyYkriaeda6/p.amcmi5cvGcdL/fdG'),
+  ('user19', 'Daniel', 'Thomas', '1981-09-13', '$2b$10$WnVLBksTn7kwmz5bxtjbmeNtyYkriaeda6/p.amcmi5cvGcdL/fdG');
